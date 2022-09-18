@@ -29,16 +29,8 @@
                     <h2>TRENDING WEEKLY <i class="fa-solid fa-fire-flame-curved"></i></h2>
                         {% for row in rows%}
                             <ul class="list-items">
-                                <li>{{ row[0] }}. {{ row[1] }}</li>
-                                <!--<li id="weekly-3"> <i class="fa-solid fa-fire-flame-curved"></i></li>
-                                <li id="weekly-4"></li>
-                                <li id="weekly-5"></li>
-                                <li id="weekly-6"></li>
-                                <li id="weekly-7"></li>
-                                <li id="weekly-8"></li>
-                                <li id="weekly-9"></li>
-                                <li id="weekly-10"></li> -->
-                                </ul>
+                                <li>{{ loop.index }}. {{ row[0] }}</li>
+                            </ul>
                         {% endfor %}
                 </div>
             </div>

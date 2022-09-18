@@ -15,12 +15,13 @@ my_conn=mysql.connector.connect(
     host = os.environ.get("DB_HOST"),
 )
 
+
 @bp.route("/", methods=['GET'])
 def index():
     stylesheet = url_for('static', filename='styles/stylesheet.css')
     logo = url_for('static', filename='styles/Trending.png')
     favicon = url_for('static', filename='styles/T.png')
     mycursor = my_conn.cursor()
-    mycursor.execute("SELECT top_10, tickers FROM top_10_weekly")
+    mycursor.execute("SELECT Symbol, Count FROM nasdaq_tickers ORDER BY Count DESC LIMIT 10")
     rows = mycursor.fetchall()
     return render_template('index.html', stylesheet=stylesheet, logo=logo, favicon=favicon, rows=rows)
