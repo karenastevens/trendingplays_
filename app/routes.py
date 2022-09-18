@@ -20,4 +20,7 @@ def index():
     stylesheet = url_for('static', filename='styles/stylesheet.css')
     logo = url_for('static', filename='styles/Trending.png')
     favicon = url_for('static', filename='styles/T.png')
-    return render_template('index.html', stylesheet=stylesheet, logo=logo, favicon=favicon)
+    mycursor = my_conn.cursor()
+    mycursor.execute("SELECT top_10, tickers FROM top_10_weekly")
+    rows = mycursor.fetchall()
+    return render_template('index.html', stylesheet=stylesheet, logo=logo, favicon=favicon, rows=rows)

@@ -68,10 +68,3 @@ hr {
     text-align: left;
     border-bottom: lightblue 1px solid;
 }
-
-.list-items li::before {
-    content: counter(list);
-    color: #2B59C3;
-    font-size: 25px;
-    padding-right: 15px;
-}
