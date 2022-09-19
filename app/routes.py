@@ -4,7 +4,6 @@ from app import app
 import mysql.connector
 import os
 from flask import (Blueprint, render_template, url_for)
-from datetime import (datetime, timedelta)
 
 bp = Blueprint('index', __name__, url_prefix='/')
 
