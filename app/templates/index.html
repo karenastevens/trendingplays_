@@ -16,10 +16,19 @@
         <!--Header Section-->
         <header>
             <!--Nav Bar-->
-            <nav class="nav-bar">
+            <nav class="nav">
                 <a href="/"><img class="logo" src="{{ logo }}"></a>
-                <a class="nav-item" href="#">About</a>
-                <a  class="nav-item" href="https://github.com/karenastevens/trendingplays_" target="_blank">Contribute</a>
+
+                <div class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+
+                <div class="nav__link hide">
+                    <!--<a href="#">About</a>-->
+                    <a href="https://github.com/karenastevens/trendingplays_" target="_blank">Contribute <i class="fa-brands fa-github"></i></a>
+                </div>
             </nav>
         </header>
         <main>
@@ -35,5 +44,12 @@
                 </div>
             </div>
         </main>
+        <!-- footer-->
+        </div>
+            <footer>
+                <div>Trending Plays. 2022. <a href="https://github.com/karenastevens/trendingplays_"><i class="fa-brands fa-github"></i></a></div>
+            </footer>
+        </div>
     </body>
+    <script src="{{ javascript }}"></script>
 </html>
