@@ -8,6 +8,7 @@ flask = "*"
 mysql-connector-python = "*"
 python-dotenv = "*"
 requests = "*"
+gunicorn = "*"
 
 [dev-packages]
 pylint = "*"
