@@ -4,12 +4,6 @@ Trending Plays is a web application that allows users to view the top 10 trendin
 
 This can be used as part of research when trading options or day trading.
 
-<h2>Upcoming Features :seedling:</h2>
-
-:heart: User will be able to click on each ticker to view more information, such as real-time stock prices and other market data
-
-:heart: User will be able to click on each ticker to view recent news surrounding the company
-
 <h2>Prerequisites :clipboard:</h2>
 
 To run Trending Plays, you will need the following:
@@ -46,6 +40,7 @@ CREATE TABLE nasdaq_tickers (
 ```
 INSERT INTO nasdaq_tickers(symbol)
 SELECT symbol from nasdaq;
+```
 
 4. Make sure the table is created and the symbols are added.
 
@@ -92,3 +87,24 @@ pip install -r requirements.txt
 export FLASK_APP=app.py
 flask run
 ```
+
+2. In a separate terminal windown, you can run the tweet count script to update the information in the database:
+
+```
+python3 weekly_tweet_count.py
+```
+
+The application is set to grab the lastest information from the database with each request to keep the top 10 as accurate as possible:
+```
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+```
+
+4. Open your web browser and navigate to `http://localhost:5000/` (or whichever port you chose to have it listen on)
+
+You should now be able to view the application in your web browser. If you make any changes to the code, you will need to restart the Flask development server for the changes to take effect.
+
+<h2>Upcoming Features :seedling:</h2>
+
+:heart: User will be able to click on each ticker to view more information, such as real-time stock prices and other market data
+
+:heart: User will be able to click on each ticker to view recent news surrounding the company
