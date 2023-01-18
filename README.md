@@ -1,5 +1,4 @@
 <h1>Trending Plays</h1>
-<img href="https://imgur.com/wPHFUE8">
 
 Trending Plays is a web application that allows users to view the top 10 trending NASDAQ stocks on Twitter over the past 7 days. The application uses the Twitter API to track the number of tweets for each stock and displays the top 10 on the website.
 
