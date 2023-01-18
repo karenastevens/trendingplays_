@@ -21,6 +21,40 @@ To run Trending Plays, you will need the following:
 * a MySQL Server (or any of your choice)
 * Docker (optional)
 
+<h2>Creating the database table :wrench:</h2>
+
+1. Import the `nasdaq.json` file into a new database. The latest file can be downloaded [here](https://datahub.io/core/nasdaq-listings).
+
+```
+mysql -u <username> -p <database_name> < nasdaq.json
+```
+
+2. Create a new table named `nasdaq_tickers` with the following columns:
+
+* `symbol`: VARCHAR(10)
+* `count`: INT
+
+```
+CREATE TABLE nasdaq_tickers (
+    symbol VARCHAR(10)
+    count INT
+);
+```
+
+3. Insert the ticker symbols from the `nasdaq.json` file into the `symbol` column of the `nasdaq_tickers` table.
+
+```
+INSERT INTO nasdaq_tickers(symbol)
+SELECT symbol from nasdaq;
+
+4. Make sure the table is created and the symbols are added.
+
+```
+SELECT * FROM nasdaq_tickers;
+```
+
+You should now have a `nasdaq_tickers` table in your database with all the ticker symbols from the `nasdaq.json` file. The count column will be used to store the number of tweets for each symbol, which will be updated by the `weekly_tweet_count.py` script.
+
 <h2>Installing :computer:</h2>
 
 1. Clone the repository to your local machine:
@@ -34,12 +68,12 @@ git clone https://github.com/karenastevens/trendingstocks.git
 
 ```
 FLASK_DEBUG=true
-SECRET_KEY=YOUR_RANDOMLY_GENERATED_KEY_FOR_FLASK
-DB_USER=YOUR_DATABASE_USERNAME
-DB_PASS=YOUR_DATABASE_PASSWORD
-DB_NAME=YOUR_DATABASE_NAME
-DB_HOST=YOUR_DATABASE_HOST
-BEARER_TOKEN=YOUR_BEARER_TOKEN
+SECRET_KEY= randomly generated key for flask
+DB_USER= database username
+DB_PASS= database password
+DB_NAME= database name
+DB_HOST= database host
+BEARER_TOKEN= your unique bearer token
 ```
 
 3. Install the Python dependencies:
@@ -51,3 +85,10 @@ pip install -r requirements.txt
 <h2>Running the application :running:</h2>
 
 <h3>Option 1: Without Docker</h3>
+
+1. Start the Flask development server:
+
+```
+export FLASK_APP=app.py
+flask run
+```
