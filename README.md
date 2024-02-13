@@ -11,7 +11,7 @@ To run Trending Plays, you will need the following:
 * Python 3.8 or later
 * pip
 * Flask
-* A Twitter API bearer token (you can get one [here](href="https://developer.twitter.com/en").
+* A Twitter API bearer token.
 * a MySQL Server (or any of your choice)
 * Docker (optional)
 
