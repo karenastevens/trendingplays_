@@ -1,3 +1,10 @@
+<h1>Project Update:</h1>
+<p>
+Due to the recent price adjustment to the Twitter API, maintaining the live version of Trending Plays has become financially unsustainable. The difficult decision has been made to discontinue the live service associated with this project.
+
+Despite this setback, the repository will remain available as a showcase of the work done and a resource for those interested in the project's technical aspects.
+</p>
+
 <h1>Trending Plays</h1>
 
 Trending Plays is a web application that allows users to view the top 10 trending NASDAQ stocks on Twitter over the past 7 days. The application uses the Twitter API to track the number of tweets for each stock and displays the top 10 on the website.
